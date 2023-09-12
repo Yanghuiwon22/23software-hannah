@@ -7,8 +7,8 @@ def main():
     temp_f = float(input('온도를 입력하세요(화씨) '))
     temp_c = float(input('온도를 입력하세요(섭씨) '))
 
-    print(f"{temp_f}F => \033[36m{f2c(temp_f)}℃\033[0m")
-    print(f"{temp_c}℃ => \033[36m{c2f(temp_c)}F")
+    print(f"{temp_f}F => \033[36m{f2c(temp_f):.1f}℃\033[0m")
+    print(f"{temp_c}℃ => \033[36m{c2f(temp_c):.1f}F")
 
 
 if __name__ == "__main__":

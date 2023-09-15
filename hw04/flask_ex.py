@@ -12,20 +12,20 @@ def hello_world():
 
 @app.route("/gugu/<dan>")
 def gugudan(dan):
-    dan = int(dan)
+    # dan = int(dan)
+    dan = 3
 
-
+    resp = ''
     resp += '<html>\n'
-    resp += '<body>\n
-    resp += f'<h2>{dan}단</h2>\n
-    resp += '<div>\n
+    resp += '<body>\n'
+    resp += f'<h2>{dan}단</h2>\n'
+    resp += '<div>\n'
     for i in range(1, 10):
-        resp += f'{dan} X {i:2d} = {dan * i:02d}<br>\n
-    resp += '</div>\n
-    resp += '</body>\n
-    resp += '</html>\n
+        resp += f'{dan} X {i:2d} = {dan * i:02d}<br>\n'
+    resp += '</div>\n'
+    resp += '</body>\n'
+    resp += '</html>\n'
 
     return resp
 
-
-app.run(host = '0. 0. 0. 0)
+app.run()

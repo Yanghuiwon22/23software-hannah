@@ -4,16 +4,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def first_page():
-    return "<a href='/'>첫페이지</a> <a href='/hello'>Hello!</a> <a href='/dan_input'>구구단</a><a href='/fac_input'>팩토리얼</a><p>첫페이지 입니다!</p>"
+    return "<ul><li><a href='/'>첫페이지</a> <li><a href='/hello'>Hello!</a> <li><a href='/dan_input'>구구단</a><li><a href='/fac_input'>팩토리얼</a><p>첫페이지 입니다!</p></ul>"
 
 @app.route("/hello")
 def hello_world():
-    return "<a href='/'>첫페이지</a> <a href='/hello'>Hello!</a> <a href='/dan_input'>구구단</a> <a href='/fac_input'>팩토리얼</a><p>Hello world!</p>"
+    return "<ul><li><a href='/'>첫페이지</a> <li><a href='/hello'>Hello!</a> <li><a href='/dan_input'>구구단</a> <li><a href='/fac_input'>팩토리얼</a></ul> <p>Hello world!</p>"
 
 @app.route("/dan_input")
 def dan_input():
-    return """
-    <a href='/'>첫페이지</a> <a href='/hello'>Hello!</a>
+    return """<ul>
+    <li><a href='/'>첫페이지</a> <li><a href='/hello'>Hello!</a></ul>
     <form method="POST" action="/gugu">
         <label for="dan">단 입력:</label>
         <input type="number" name="dan" id="dan" min="1" max="9" required>
@@ -23,8 +23,8 @@ def dan_input():
 
 @app.route("/fac_input")
 def fac_input():
-    return """
-    <a href='/'>첫페이지</a> <a href='/hello'>Hello!</a>
+    return """<ul>
+    <li><a href='/'>첫페이지</a> <li><a href='/hello'>Hello!</a></ui>
     <form method="POST" action="/fac">
         <label for="fac_num">숫자 입력:</label>
         <input type="number" name="fac_num" id="fac_num" min="1" required>

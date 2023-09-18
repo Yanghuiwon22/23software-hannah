@@ -33,7 +33,7 @@ def hello_world():
 # 이번주 /gugu?dan=7
 @app.route("/gugu")
 def gugudan():
-    dan = int(request.arg.get('dan'))
+    dan = int(request.args.get('dan'))
     resp = ''
 
     resp += '<html>\n'

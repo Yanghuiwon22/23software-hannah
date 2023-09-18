@@ -72,7 +72,7 @@ def gugudan():
 
     return resp
 
-@app.route("/fac", methods=['POST'])
+@app.route("/fac", methods=['GET','POST'])
 def factorial():
     fac_num = int(request.form['fac_num'])
     response = 1
@@ -80,7 +80,10 @@ def factorial():
     for i in range(1, fac_num + 1):
         response *= i
 
-    return f"<h2>{fac_num}! = {response}</h2>"
+    return f"<h2>{fac_num}! = {response}</h2> " \
+           """<form method="POST" action="/">
+                <input type="submit" value="뒤로">"""
+
 
 
 if __name__ == "__main__":

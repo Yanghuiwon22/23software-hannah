@@ -10,35 +10,22 @@ def first_page():
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-    crossorigin="anonymous"></script>
     <title>Document</title>
+    <script scr = ""https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 </head>
+
 <body>
-    <form  action="javascript:post_query()">
+    <form method="get" action="/gugu">
         <h2>구구단 출력하기</h2>
         <label>단 : </label>
         <input type="text" name="dan">
         <button type="submit">출력</button>
     </form>
-    <div id='results'></div>
-
-<script>
-function post_query() {
-    $.ajax({
-        type: "GET",
-        url: "http://113.198.38.228:5000/gugu ",
-        data: $("#form_id").serialize(),
-        success: update_result,
-        dataType: "html"
-    });
-}
-function update_result(data) {
-    $("#results").html(data);
-}
-
-</script>
+    
+    <!-- 서버에서 받은 결과를 출력하는 역할 -->
+    <div id="results"></div>           
+    
+    
 
 </body>
 </html>"""
@@ -70,4 +57,4 @@ def gugudan():
     return resp
 
 if __name__=="__main__":
-    app.run(host='0.0.0.0')
+    app.run()

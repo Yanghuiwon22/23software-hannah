@@ -73,6 +73,7 @@ def gugudan():
     return resp
 
 @app.route("/fac", methods=['GET','POST'])
+@app.route("/fac", methods=['GET','POST'])
 def factorial():
     fac_num = int(request.form['fac_num'])
     response = 1

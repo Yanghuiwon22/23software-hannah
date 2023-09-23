@@ -10,9 +10,13 @@ def first_page():
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- week03 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
     crossorigin="anonymous"></script>
+    <!-- week03 -->
+    
     <title>Document</title>
 </head>
 <body>
@@ -22,8 +26,12 @@ def first_page():
         <input type="text" name="dan">
         <button type="submit">출력</button>
     </form>
+    
+    <!-- week03 -->
     <div id='results'></div>
+    <!-- week03 -->
 
+<!-- week03 -->
 <script>
 function post_query() {
     $.ajax({
@@ -39,6 +47,8 @@ function update_result(data) {
 }
 
 </script>
+<!-- week03 -->
+
 
 </body>
 </html>"""

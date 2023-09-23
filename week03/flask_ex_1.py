@@ -10,16 +10,16 @@ def first_page():
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
     <form id="form_id" action="javascript:post_query()">
-        <h2>구구단 출력하기</h2>
-        <label>단 : </label>
-        <input type="text" name="dan">
+        <h2>팩토리얼 계산 </h2>
+        <label>숫자 : </label>
+        <input type="text" name="num">
         <button type="submit">출력</button>
     </form>
     <div id='results'></div>
@@ -28,7 +28,7 @@ def first_page():
 function post_query() {
     $.ajax({
         type: "GET",
-        url: "http://192.168.0.71:5000/gugu",
+        url: "http://192.168.0.71:5000/fac",
         data: $("#form_id").serialize(),
         success: update_result,
         dataType: "html"
@@ -70,6 +70,19 @@ def gugudan():
     resp += '</html>\n'
 
     return resp
+
+@app.route("/fac")
+def factorial():
+    fac_num = int(request.args.get('num'))
+    response = 1
+
+    for i in range(1, fac_num + 1):
+        response *= i
+
+    return f"<h2>{fac_num}! = {response}</h2> " \
+           """<form method="POST" action="/">
+                <input type="submit" value="뒤로">"""
+
 
 if __name__=="__main__":
     app.run(host='0.0.0.0', debug=True)

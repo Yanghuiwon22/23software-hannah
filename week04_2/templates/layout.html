@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>이성용의 홈페이지</title>
+    <link href="./practice.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='what_time_is_it.js')}}"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="./index">Home</a>
+        <a href="{{ url_for('about_me_func') }}">about</a>
+        <a href="{{ url_for('blog_list_func') }}">blog</a>
+
+
+
+
+    </nav>
+    <!-- Main content-->
+    {% block content %} {% endblock %}
+</body>
+
+</html>

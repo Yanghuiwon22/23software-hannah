@@ -16,7 +16,6 @@ color:black;
 font-size: 300%;
 text-align: center;
 font-weight : bold;
-padding: 10px;
 }
 
 .d1{background-color:red}
@@ -30,7 +29,8 @@ background-color:lightgray;
 .small_name{
 color:black;
 font-weight : bold;
-font-size:150%
+font-size:150%;
+margin-left:50px
 }
 
 html.open {

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <h2>Yang Huiwon</h2>
+    <button onclick="whatTimeIsIt()">현재시간</button>
+    <hr/>
+
+    <label for="inputA">a</label>
+    <input id="inputA" value=1 onkeyup="doSomething()">
+    <label for="inputB">b</label>
+    <input id="inputB" value=2 onkeyup="doSomething()">
+
+    <p><span id="valueA">1</span> + <span id="valueB">2</span> = <span id="valueC">3</span>입니다.</p>
+
+    <p>문단은 p로 쓰세요. p는 아마도 Paragraph의 앞 자를 따 온 것이겠죠?</p>
+    <a href="https://www.google.com">Go to google</a>
+    <hr/>
+    <img src="{{url_for('static', filename='images/stay_funky.jpg')}}" width="200">
+
+{% endblock %}

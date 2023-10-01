@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>HANNAH</title>
+    <link href="{{ url_for('static', filename='practice.css')}}" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='what_time_is_it.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='add_two_numbers.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="header-inner">
+                    <div class="logo">
+                    <a href="{{ url_for('first_page') }}">HANNAH</a>
+                    </div>
+                    <div class="menu-overlay">
+                        <a href="{{ url_for('about_me_func') }}">About Me</a>
+                        <a href="{{ url_for('blog_list_func') }}">Blog</a>
+                        <a href="{{ url_for('my_schedule_func') }}">My Schedule</a>
+                        <a href="{{ url_for('homework_func') }}">Homework</a>
+                        <a href="{{ url_for('contact_func') }}">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contents">
+         {% block content %} {% endblock %}
+    </div>
+</body>

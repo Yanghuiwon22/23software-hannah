@@ -1,11 +1,19 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
 
-{% block content %}
-    <h1>Blog</h1>
-     {% for post in posts %}
-      <article>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.content}}</p>
-      </article>
-    {% endfor %}
-{% endblock %}
+        <title>Blog</title>
+        <link href="./practice.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./blog_list.html">Blog</a>
+            <a href="./about_me.html">About Me</a>
+        </nav>
+
+        <h1>Blog</h1>
+        <p>아직 작성하지 않았습니다.</p>
+    </body>
+</html>

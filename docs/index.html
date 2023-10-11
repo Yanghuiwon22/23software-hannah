@@ -4,37 +4,41 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>HANNAH</title>
-    <link href="{{ url_for('static', filename='practice.css')}}" rel="stylesheet" type="text/css">
+    <title>이성용의 홈페이지</title>
+    <link href="./practice.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="{{ url_for('static', filename='what_time_is_it.js')}}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='add_two_numbers.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script type="text/javascript" src="add_two_numbers.js"></script>
+    <script type="text/javascript" src="what_time_is_it.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="header-inner">
-                    <div class="logo">
-                    <a href="{{ url_for('first_page') }}">HANNAH</a>
-                    </div>
-                    <div class="menu-overlay">
-                        <a href="{{ url_for('about_me_func') }}">About Me</a>
-                        <a href="{{ url_for('blog_list_func') }}">Blog</a>
-                        <a href="{{ url_for('my_schedule_func') }}">My Schedule</a>
-                        <a href="{{ url_for('homework_func') }}">Homework</a>
-                        <a href="{{ url_for('contact_func') }}">Contact</a>
-                    </div>
-                </div>
-            </div>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./blog_list.html">Blog</a>
+        <a href="./about_me.html">About Me</a>
+    </nav>
 
-        </div>
-    </div>
+    <h1>첫번째 크기 헤드라인</h1>
+    <h2>두번째 크기 헤드라인</h2>
+    <h3>세번째 크기 헤드라인</h3>
+    <h4>네번째 크기 헤드라인</h4>
+    <h5>다섯번째 크기 헤드라인</h5>
 
-    <main class="contents">
-        {% block content %}{% endblock %}
-    </main>
+
+    <button onclick="whatTimeIsIt()">현재시간</button>
+    <hr />
+
+    <label for="inputA">a</label>
+    <input id="inputA" value=1 onkeyup="doSomething()">
+    <label for="inputB">b</label>
+    <input id="inputB" value=2 onkeyup="doSomething()">
+
+    <p><span id="valueA">1</span> + <span id="valueB">2</span> = <span id="valueC">3</span>입니다.</p>
+
+    <p>문단은 p로 쓰세요. p는 아마도 Paragraph의 앞 자를 따 온 것이겠죠?</p>
+    <a href="https://www.google.com">Go to google</a>
+    <hr />
+    <img src="./images/stay_funky.jpg" width="600px">
 </body>
+
+</html>

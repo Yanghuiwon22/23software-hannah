@@ -8,7 +8,7 @@ def first_page():
 
 @app.route("/aboutme")
 def about_me_func():
-    return render_template('about_me.html')
+    return render_template('about_me_2.html')
 
 @app.route("/bloglist")
 def blog_list_func():

@@ -2,16 +2,6 @@
     padding: 35px;
 }
 
-.container{
-    max-width: 1440px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.row{
-
-}
-
 .logo{
     text-align: left;
     font-weight: 800;
@@ -51,7 +41,9 @@ body {
     text-align:center
 }
 
-
+.icon-instagram{
+    font-size:30px
+}
 
 html.open {
   overflow: hidden;
@@ -82,10 +74,6 @@ html.open {
 }
 
 .page-content{
-
-
-    padding-left: 230px;
-    padding-right: 230px;
     font-size: 18px;
 }
 

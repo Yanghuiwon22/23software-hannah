@@ -1,30 +1,33 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
+# py_simple_gui_client.py
 import requests
-from pprint import pprint
+import PySimpleGUI as sg
 
-app = FastAPI()
+sg.theme("DarkBlue3")
 
-API_KEY = "2377a6d257fdfc1cdc2b4c4e4f79a982"
+layout = [
+    [sg.Text("Enter city name:"), sg.InputText(key="city"), sg.Button("Get Weather")],
+    [sg.Output(size=(60, 10))]
+]
 
+window = sg.Window("FastAPI Weather App", layout)
 
-def get_weather_data(city):
-    base_url = f"https://api.openweathermap.org/data/2.5/weather?appid={API_KEY}&q={city}"
-    weather_data = requests.get(base_url).json()
-    return weather_data
+BASE_URL = "http://127.0.0.1:8000/weather/"
 
+while True:
+    event, values = window.read()
 
-@app.get("/weather/{city}")
-def get_weather(city: str):
-    weather_data = get_weather_data(city)
-    if "message" in weather_data and weather_data["cod"] == "404":
-        raise HTTPException(status_code=404, detail="City not found")
+    if event == sg.WIN_CLOSED:
+        break
 
-    # 수동으로 들여쓰기를 적용하여 JSON 형식으로 반환
-    return JSONResponse(content=weather_data, media_type="application/json", status_code=200)
+    if event == "Get Weather":
+        city = values["city"]
+        url = f"{BASE_URL}{city}"
 
+        try:
+            response = requests.get(url)
+            weather_data = response.json()
+            sg.Print(f"Weather data for {city}:\n{weather_data}")
+        except Exception as e:
+            sg.Print(f"Error: {e}")
 
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+window.close()
